@@ -1,30 +1,41 @@
 {
-  "name": "remedycalendar",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "remedy-calendar",
+  "version": "1.0.0",
+  "description": "Ultra-fast calendar generator with intelligent caching system for TypeScript/JavaScript applications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
-  "dependencies": {
-    "date-fns": "^4.1.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
+  "keywords": [
+    "calendar",
+    "date",
+    "week",
+    "month",
+    "year",
+    "typescript",
+    "i18n",
+    "localization",
+    "iso-week",
+    "cache"
+  ],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
-    "@eslint/js": "^9.29.0",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react-swc": "^3.10.2",
-    "eslint": "^9.29.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.2.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.34.1",
-    "vite": "^7.0.0"
-  }
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaxouwells/remedy-calendar-fns.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xaxouwells/remedy-calendar-fns/issues"
+  },
+  "homepage": "https://github.com/xaxouwells/remedy-calendar-fns#readme"
 }

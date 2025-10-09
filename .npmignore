@@ -1,0 +1,29 @@
+# Source files
+src/
+tsconfig.json
+
+# Development files
+*.ts
+!*.d.ts
+
+# Git files
+.git
+.gitignore
+
+# Editor
+.vscode/
+.idea/
+
+# Tests
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+test/
+tests/
+__tests__/
+
+# Other
+node_modules/
+.DS_Store
+*.log
