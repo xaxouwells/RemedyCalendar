@@ -8,8 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-dist-ssr
+# dist is included for npm package
 *.local
 
 # Editor directories and files
@@ -22,3 +21,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Dev files not needed in repo
+src/**/*.test.ts
+src/**/*.spec.ts
+coverage/
