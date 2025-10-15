@@ -1,21 +1,33 @@
-// Export main calendar generator
-export { default as generateYearCalendar } from './calendar';
+/**
+ * Remedy Calendar - Ultra-fast calendar generator with intelligent caching
+ *
+ * @packageDocumentation
+ */
 
-// Export utility functions
+// Export main calendar generator
+export { generateYearCalendar, preGenerateYears, warmUpCache } from './generators/year';
+
+// Export month generator
+export { generateMonth } from './generators/month';
+
+// Export cache management utilities
 export {
-  preGenerateYears,
   clearCache,
   clearYearCache,
   clearAllCaches,
   limitCacheSize,
   limitYearCacheSize,
-  warmUpCache,
-  localeCode
-} from './calendar';
+} from './utils/cache';
 
-// Export interfaces
-export {
+// Export types
+export type {
+  LocaleCode,
+  CalendarStyle,
   IRemedyCalendarDay,
   IRemedyCalendarWeek,
-  IRemedyCalendarMonth
-} from './Interface/Interface';
+  IRemedyCalendarMonth,
+  CacheOptions,
+} from './types';
+
+// Export default
+export { generateYearCalendar as default } from './generators/year';

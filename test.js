@@ -1,11 +1,11 @@
 // Test file for remedy-calendar package
+const generateYearCalendar = require('./dist/index.js').default;
 const {
-  generateYearCalendar,
   warmUpCache,
   preGenerateYears,
   clearAllCaches,
   limitCacheSize,
-  limitYearCacheSize
+  limitYearCacheSize,
 } = require('./dist/index.js');
 
 console.log('>� Testing Remedy Calendar Package\n');
@@ -23,7 +23,9 @@ console.log('Test 2: Generate calendar for 2025 (English, American style)');
 const calendar2025EN = generateYearCalendar(2025, 'en-US', 'am', false);
 console.log(` Generated ${calendar2025EN.length} months`);
 console.log(` First month: ${calendar2025EN[0].monthName} ${calendar2025EN[0].monthYear}`);
-console.log(` First day of week (should start Sunday): ${calendar2025EN[0].month[0].weekDay[0].dayName}\n`);
+console.log(
+  ` First day of week (should start Sunday): ${calendar2025EN[0].month[0].weekDay[0].dayName}\n`
+);
 
 // Test 3: Test today detection
 console.log('Test 3: Today detection');
@@ -67,7 +69,7 @@ console.log(' Pre-generated calendars for 2024 and 2026\n');
 // Test 6: Test different locales
 console.log('Test 6: Test different locales');
 const locales = ['fr-FR', 'en-US', 'es-ES', 'de-DE'];
-locales.forEach(locale => {
+locales.forEach((locale) => {
   const cal = generateYearCalendar(2025, locale, 'eu', false);
   console.log(` ${locale}: ${cal[0].monthName}`);
 });
@@ -97,14 +99,16 @@ const partialCalendar = generateYearCalendar(currentYear, 'en-US', 'eu', true);
 const currentMonth = new Date().getMonth();
 console.log(` Current month index: ${currentMonth}`);
 console.log(` Generated months starting from: ${partialCalendar[0].monthName}`);
-console.log(` Total months generated: ${partialCalendar.length} (should be ${12 - currentMonth})\n`);
+console.log(
+  ` Total months generated: ${partialCalendar.length} (should be ${12 - currentMonth})\n`
+);
 
 // Test 10: Weekend detection
 console.log('Test 10: Weekend detection');
 const weekToTest = calendar2025EN[0].month[0];
 let weekendCount = 0;
 let weekdayCount = 0;
-weekToTest.weekDay.forEach(day => {
+weekToTest.weekDay.forEach((day) => {
   if (day.isWeekend) {
     weekendCount++;
   } else {
